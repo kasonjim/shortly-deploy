@@ -39,7 +39,6 @@ module.exports = function(grunt) {
     eslint: {
       target: [
         // Add list of files to lint here
-        // 'public/client/app.js'
         'server.js',
         'public/client/*.js',
         'app/**/*.js',
@@ -96,13 +95,6 @@ module.exports = function(grunt) {
   // Main grunt tasks
   ////////////////////////////////////////////////////
 
-  // grunt.registerTask('default', [
-  //   'uglify', 'cssmin'
-  // ]);
-
-  // grunt.registerTask('eslint', [ 'eslint' ]);
-
-
   grunt.registerTask('test', [
     'mochaTest'
   ]);
@@ -112,9 +104,7 @@ module.exports = function(grunt) {
   grunt.registerTask('upload', function(n) {
     if (grunt.option('prod')) {
       // add your production server task here
-      // git push live master
       grunt.task.run([ 'shell:prodServer']);
-      console.log('prod');
     } else {
       grunt.task.run([ 'server-dev' ]);
     }
@@ -128,26 +118,3 @@ module.exports = function(grunt) {
   ]);
 
 };
-
-
-// grunt.registerTask('asyncfoo', 'My "asyncfoo" task.', function() {
-//   // Force task into async mode and grab a handle to the "done" function.
-//   var done = this.async();
-//   // Run some sync stuff.
-//   grunt.log.writeln('Processing task...');
-//   // And some async stuff.
-//   setTimeout(function() {
-//     grunt.log.writeln('All done!');
-//     done();
-//   }, 1000);
-// });
-
-
-
-// grunt.task.registerTask('foo', 'A sample task that logs stuff.', function(arg1, arg2) {
-//   if (arguments.length === 0) {
-//     grunt.log.writeln(this.name + ", no args");
-//   } else {
-//     grunt.log.writeln(this.name + ", " + arg1 + " " + arg2);
-//   }
-// });
