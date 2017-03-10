@@ -76,6 +76,7 @@ module.exports = function(grunt) {
         command: 'git push live master'
       }
     },
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
