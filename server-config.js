@@ -4,21 +4,10 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var util = require('./lib/utility');
-var mongoose = require('mongoose');
 
 var handler = require('./lib/request-handler');
 
 var app = express();
-
-// mongoose.connect('mongodb://localhost/mongooseDB');
-//
-// var db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'connection error:'));
-// db.once('open', function() {
-//   // we're connected!
-//   console.log('Connected to mongoose!');
-// });
-
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
